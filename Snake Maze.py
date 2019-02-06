@@ -75,16 +75,6 @@ class player:
                 self.left = False
                 self.right = False
                 self.up = False
-                
-##        if self.left == True:
-##            self.x -= self.squareSize
-##        if self.right == True:
-##            self.x += self.squareSize
-##        if self.up == True:
-##            self.y -= self.squareSize
-##        if self.down == True:
-##            self.y += self.squareSize
-            
 
 
 def drawMaze(screen,grid, squareSize, screenw, current):
@@ -105,8 +95,8 @@ def drawMaze(screen,grid, squareSize, screenw, current):
                 wall = walls(startPos, endPos)
                 wall.draw()
 ##                pygame.draw.rect(screen, (255,0,0), (startPos[0], startPos[1], 4,squareSize),1)
-                please = pygame.Rect(startPos[0], startPos[1], 4,squareSize)
-                listWalls.append(please)
+                border = pygame.Rect(startPos[0], startPos[1], 4,squareSize)
+                listWalls.append(border)
                 
             if 'r' in cell:
                 startPos = ((x * squareSize) + squareSize, y * squareSize)
@@ -114,8 +104,8 @@ def drawMaze(screen,grid, squareSize, screenw, current):
                 wall = walls(startPos, endPos)
                 wall.draw()
 ##                pygame.draw.rect(screen, (255,0,0), (startPos[0], startPos[1], 4,squareSize),1)
-                please = pygame.Rect(startPos[0], startPos[1], 4,squareSize)
-                listWalls.append(please)
+                border = pygame.Rect(startPos[0], startPos[1], 4,squareSize)
+                listWalls.append(border)
                 
             if 'u' in cell:
                 startPos = (x * squareSize, y * squareSize)
@@ -123,8 +113,8 @@ def drawMaze(screen,grid, squareSize, screenw, current):
                 wall = walls(startPos, endPos)
                 wall.draw()
 ##                pygame.draw.rect(screen, (255,0,0), (startPos[0], startPos[1], squareSize,4),1)
-                please = pygame.Rect(startPos[0], startPos[1], squareSize,4)
-                listWalls.append(please)
+                border = pygame.Rect(startPos[0], startPos[1], squareSize,4)
+                listWalls.append(border)
                 
             if 'd' in cell:
                 startPos = (x * squareSize, (y * squareSize) + squareSize)
@@ -132,8 +122,8 @@ def drawMaze(screen,grid, squareSize, screenw, current):
                 wall = walls(startPos, endPos)
                 wall.draw()
 ##                pygame.draw.rect(screen, (255,0,0), (startPos[0], startPos[1], squareSize,4),1)
-                please = pygame.Rect(startPos[0], startPos[1], squareSize,4)
-                listWalls.append(please)
+                border = pygame.Rect(startPos[0], startPos[1], squareSize,4)
+                listWalls.append(border)
 
     
 def nextMove(grid, unvisited, visited, current, mazeDone):
